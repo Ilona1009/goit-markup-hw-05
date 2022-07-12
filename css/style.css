@@ -18,7 +18,7 @@
     --imag-thumb: rgba(47, 48, 58, 0.8);
     --border-modal-close: 1px solid rgba(0, 0, 0, 0.1);
     --backdrop: rgba(0, 0, 0, 0.2);
-    --animacia:2250ms cubic-bezier(0.4, 0, 0.2, 1);
+    --animacia:250ms cubic-bezier(0.4, 0, 0.2, 1);
   }
   
   
@@ -197,7 +197,7 @@
     transition: color var(--animacia);
   }
   .contact-heder:hover,
-  :focus {
+  .contact-heder:focus {
     color: var(--accent-color);
   }
   .contact-map {
@@ -348,6 +348,7 @@ fill: currentColor;
     font-size: 18px;
     line-height: 2;
     margin-bottom: 4px;
+    letter-spacing: 0.06em;
   }
   
   
@@ -360,8 +361,9 @@ fill: currentColor;
   .desc {
     color: var(--contact-color);
     font-size: 16px;
-    line-height: 1.9;
+    line-height: 1.8;
     margin: 0;
+    font-weight: 400;
   }
   
   
@@ -395,21 +397,18 @@ fill: currentColor;
     justify-content: space-between;
   }
 
+
   .imag-thumb{
     position: relative;
-  }
-  .imag-thumb::before{
-    position: absolute;
-    content: " ";
-    width: 100%;
-    height: 70px;
-    background-color:var(--imag-thumb);
-    bottom: 0;
+    content: "";
   }
 
 .thumb-title{
-  position: absolute;
-    content: " ";
+position: absolute;
+content: "";
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-weight: 700;
   font-size: 14px;
   line-height: 1.1;
@@ -417,8 +416,12 @@ fill: currentColor;
   letter-spacing: 0.03em;
   text-transform: uppercase;
   color: var(--wite-color);
-  bottom: 23px;
-  left: 83px;
+  background:var(--imag-thumb);
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  
 }
   
   /* команда */
@@ -504,7 +507,9 @@ fill: currentColor;
     align-items: center;
     justify-content: center;
     transition: color var(--animacia);
-}
+    border: 1px solid var(--link-color);
+    border-radius: 4px;
+  }
 
 .client-list{
   display: flex;
@@ -514,22 +519,14 @@ fill: currentColor;
 }
 
 
-.client-li{
-  border: 1px solid var(--link-color);
-    border-radius: 4px;
-    transition: color var(--animacia);
-}
 .client-li:not(:last-child){
   margin-right: 30px;
 }
 
 .clients:hover,
-:focus{
+.clients:focus{
   fill:var(--accent-color);
-}
-.client-li:hover,
-:focus{
-  color:var(--accent-color);
+border-color: var(--accent-color);
 }
 
 
